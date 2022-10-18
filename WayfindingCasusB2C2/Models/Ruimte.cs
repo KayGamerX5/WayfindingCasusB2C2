@@ -17,11 +17,12 @@ namespace WayfindingCasusB2C2.Models
 
         public int RuimteBezoekers { get; set; }
 
-        public int BedrijfId { get; set; }
+        //public int BedrijfId { get; set; }
 
-        public Bedrijf Bedrijf { get; set; }
+        //public Bedrijf Bedrijf { get; set; }
 
         public ICollection<Gebruiker> Gebruikers { get; set; }
         public ICollection<Plattegrond> Plattegronds { get; set; }
+        public ICollection<Bedrijf> Bedrijfs { get; set; }
     }
 }

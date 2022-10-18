@@ -10,15 +10,13 @@ namespace WayfindingCasusB2C2.Models
         [Key]
         public int BedrijfId { get; set; }
 
-        [ForeignKey("BedrijfDetail")]
         public int DetailsId { get; set; }
 
         public BedrijfDetail BedrijfDetail { get; set; }
 
-        [ForeignKey("Ruimte")]
-        public int RuimteId { get; set; }
+        //public int RuimteId { get; set; }
 
-        public Ruimte Ruimte { get; set; }
+        //public Ruimte Ruimte { get; set; }
 
 
         public ICollection<Plattegrond> Plattegronds { get; set; }
