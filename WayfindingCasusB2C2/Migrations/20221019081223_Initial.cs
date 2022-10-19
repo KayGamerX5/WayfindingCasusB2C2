@@ -4,7 +4,7 @@
 
 namespace WayfindingCasusB2C2.Migrations
 {
-    public partial class AddItemsToDb : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

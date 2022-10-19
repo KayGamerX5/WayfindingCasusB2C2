@@ -12,8 +12,8 @@ using WayfindingCasusB2C2.Data;
 namespace WayfindingCasusB2C2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221018072359_AddItemsToDb")]
-    partial class AddItemsToDb
+    [Migration("20221019081223_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
