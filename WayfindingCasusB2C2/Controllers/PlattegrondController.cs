@@ -1,33 +1,22 @@
-
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using System.Reflection.Metadata;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Net.Http.Headers;
 using WayfindingCasusB2C2.Data;
 using WayfindingCasusB2C2.Models;
-
+using Route = WayfindingCasusB2C2.Models.Route;
 
 namespace WayfindingCasusB2C2.Controllers
 {
     public class PlattegrondController : Controller
     {
 
-        private readonly ConnectionStringClass _cc;
-
-        public PlattegrondController( ConnectionStringClass cc)
+        private AppDbContext context { get; }
+        public PlattegrondController(AppDbContext context)
         {
-            _cc = cc;
-        }
-   
-
-    public IActionResult Index()
-        {
-            return View();
+            this.context = context;
         }
 
-        public IActionResult Create()
-
+        public IActionResult Index()
         {
             
 
@@ -103,17 +92,7 @@ namespace WayfindingCasusB2C2.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Add(Gebruiker gebruiker)
-        {
-            _cc.Add(gebruiker);
-            _cc.SaveChanges();
-            ViewBag.message= "De data" +gebruiker.GebruikerNaam + "Is opgeslagen";
-            return View();
-        }
-
-
-    
-  
-      
+        
+        
+    }
+}
