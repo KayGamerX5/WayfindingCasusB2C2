@@ -45,26 +45,23 @@ namespace WayfindingCasusB2C2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BedrijfId"), 1L, 1);
 
-                    b.Property<int>("BedrijfDetailDetailsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DetailsId")
+                    b.Property<int>("BedrijfDetailId")
                         .HasColumnType("int");
 
                     b.HasKey("BedrijfId");
 
-                    b.HasIndex("BedrijfDetailDetailsId");
+                    b.HasIndex("BedrijfDetailId");
 
                     b.ToTable("tblBedrijf");
                 });
 
             modelBuilder.Entity("WayfindingCasusB2C2.Models.BedrijfDetail", b =>
                 {
-                    b.Property<int>("DetailsId")
+                    b.Property<int>("BedrijfDetailsId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DetailsId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BedrijfDetailsId"), 1L, 1);
 
                     b.Property<string>("BedrijfBeschrijving")
                         .HasColumnType("nvarchar(max)");
@@ -86,7 +83,7 @@ namespace WayfindingCasusB2C2.Migrations
                     b.Property<int>("BedrijfOpgerichtJaar")
                         .HasColumnType("int");
 
-                    b.HasKey("DetailsId");
+                    b.HasKey("BedrijfDetailsId");
 
                     b.ToTable("tblBedrijfDetail");
                 });
@@ -245,7 +242,7 @@ namespace WayfindingCasusB2C2.Migrations
                 {
                     b.HasOne("WayfindingCasusB2C2.Models.BedrijfDetail", "BedrijfDetail")
                         .WithMany("Bedrijfs")
-                        .HasForeignKey("BedrijfDetailDetailsId")
+                        .HasForeignKey("BedrijfDetailId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

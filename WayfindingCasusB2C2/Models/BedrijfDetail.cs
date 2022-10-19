@@ -8,7 +8,7 @@ namespace WayfindingCasusB2C2.Models
     {
 
         [Key]
-        public int DetailsId { get; set; }
+        public int BedrijfDetailsId { get; set; }
 
         public string BedrijfNaam { get; set; }
 
