@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using WayfindingCasusB2C2.Data;
+using WayfindingCasusB2C2.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AppDbContext>(contextOptions => contextOptions.UseSqlServer(
+builder.Services.AddDbContext<ConnectionStringClass>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 
@@ -29,6 +31,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Plattegrond}/{action=Create}/{id?}");
 
 app.Run();
