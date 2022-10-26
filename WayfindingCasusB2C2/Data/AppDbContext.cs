@@ -10,7 +10,7 @@ namespace WayfindingCasusB2C2.Data
         public AppDbContext(DbContextOptions<AppDbContext> contextOptions)
             : base(contextOptions)  
         {
-
+            
         }
 
         public DbSet<Plattegrond> Plattegronden { get; set; }
@@ -21,6 +21,6 @@ namespace WayfindingCasusB2C2.Data
         public DbSet<Route> Routes { get; set; }
         public DbSet<Ruimte> Ruimtes { get; set; }
 
-
+        
     }
 }

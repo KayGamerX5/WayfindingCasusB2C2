@@ -12,7 +12,7 @@ namespace WayfindingCasusB2C2.Migrations
                 name: "tblBedrijfDetail",
                 columns: table => new
                 {
-                    DetailsId = table.Column<int>(type: "int", nullable: false)
+                    BedrijfDetailsId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BedrijfNaam = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BedrijfEigenaar = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -23,7 +23,7 @@ namespace WayfindingCasusB2C2.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tblBedrijfDetail", x => x.DetailsId);
+                    table.PrimaryKey("PK_tblBedrijfDetail", x => x.BedrijfDetailsId);
                 });
 
             migrationBuilder.CreateTable(
@@ -75,17 +75,16 @@ namespace WayfindingCasusB2C2.Migrations
                 {
                     BedrijfId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DetailsId = table.Column<int>(type: "int", nullable: false),
-                    BedrijfDetailDetailsId = table.Column<int>(type: "int", nullable: false)
+                    BedrijfDetailId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_tblBedrijf", x => x.BedrijfId);
                     table.ForeignKey(
-                        name: "FK_tblBedrijf_tblBedrijfDetail_BedrijfDetailDetailsId",
-                        column: x => x.BedrijfDetailDetailsId,
+                        name: "FK_tblBedrijf_tblBedrijfDetail_BedrijfDetailId",
+                        column: x => x.BedrijfDetailId,
                         principalTable: "tblBedrijfDetail",
-                        principalColumn: "DetailsId",
+                        principalColumn: "BedrijfDetailsId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -189,9 +188,9 @@ namespace WayfindingCasusB2C2.Migrations
                 column: "RuimtesRuimteId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tblBedrijf_BedrijfDetailDetailsId",
+                name: "IX_tblBedrijf_BedrijfDetailId",
                 table: "tblBedrijf",
-                column: "BedrijfDetailDetailsId");
+                column: "BedrijfDetailId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_tblGebruiker_BedrijfId",
