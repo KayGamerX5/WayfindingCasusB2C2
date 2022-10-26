@@ -1,0 +1,48 @@
+﻿@model WayfindingCasusB2C2.Models.Ruimte
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<h1>Maak Ruimte</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RuimteOppervlakte" class="control-label"></label>
+                <input asp-for="RuimteOppervlakte" class="form-control" />
+                <span asp-validation-for="RuimteOppervlakte" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="RuimteBezet" /> @Html.DisplayNameFor(model => model.RuimteBezet)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="RuimteBezoekers" class="control-label"></label>
+                <input asp-for="RuimteBezoekers" class="form-control" />
+                <span asp-validation-for="RuimteBezoekers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+               
+            </div>
+
+            @ViewBag.Message
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
