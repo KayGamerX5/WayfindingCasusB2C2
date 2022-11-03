@@ -1,4 +1,11 @@
-﻿<style>
+﻿@model WayfindingCasusB2C2.Data.Detailid
+@{
+    Layout = null;
+}
+   
+
+
+<style>
     .grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto auto auto;
@@ -90,8 +97,10 @@
         <div class="item toiletten"><button>Toiletten</button></div>
         <div class="item ingang"><button>Ingang</button></div>
         <div class="item hal"><button>Hal</button></div>
-        <div class="item trap"><button>Trap</button></div>
-        <div class="item startup1"><button>Startup 1</button></div>
+        <div class="item "trap"><button>Trap</button></div>
+        <div @Model.Startup1>
+        <div class ="item startup1"><button onclick="location.href='@Url.Action("Index", "Bedrijf")'">Startup 1</button></div>
+       </div>
         <div class="item startup2"><button>Startup 2</button></div>
         <div class="item startup3"><button>Startup 3</button></div>
         <div class="item startup4"><button>Startup 4</button></div>
@@ -109,7 +118,7 @@
     </div>
 
 
-
+    @ViewBag.DetailId
 
 
 </body>
