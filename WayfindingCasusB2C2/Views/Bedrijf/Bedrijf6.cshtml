@@ -1,0 +1,52 @@
+﻿@model WayfindingCasusB2C2.Models.BedrijfDetail
+
+
+
+
+
+<div>
+    <h4>Bedrijf Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BedrijfNaam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BedrijfNaam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BedrijfEigenaar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BedrijfEigenaar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BedrijfMedewerkers)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BedrijfMedewerkers)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BedrijfDoelen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BedrijfDoelen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BedrijfOpgerichtJaar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BedrijfOpgerichtJaar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BedrijfBeschrijving)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BedrijfBeschrijving)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.BedrijfDetailsId">Edit</a> |
+    <a asp-action="Plattegrond2" asp-controller="Plattegrond">Terug naar plattegrond</a>
+</div>
