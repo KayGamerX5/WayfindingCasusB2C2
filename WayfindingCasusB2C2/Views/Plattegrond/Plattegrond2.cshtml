@@ -1,7 +1,8 @@
-﻿@model WayfindingCasusB2C2.Data.Detailid
-@{
-    Layout = null;
-}
+﻿
+
+
+
+
    
 
 
@@ -92,33 +93,31 @@
 </style>
 <body>
     <div class="grid-container">
-        <div class="item balie"><button>Informatiebalie</button></div>
-        <div class="item bar"><button>Restaurant/Bar</button></div>
-        <div class="item toiletten"><button>Toiletten</button></div>
-        <div class="item ingang"><button>Ingang</button></div>
-        <div class="item hal"><button>Hal</button></div>
-        <div class="item "trap"><button>Trap</button></div>
-        <div @Model.Startup1>
-        <div class ="item startup1"><button onclick="location.href='@Url.Action("Index", "Bedrijf")'">Startup 1</button></div>
-       </div>
-        <div class="item startup2"><button>Startup 2</button></div>
-        <div class="item startup3"><button>Startup 3</button></div>
-        <div class="item startup4"><button>Startup 4</button></div>
-        <div class="item startup5"><button>Startup 5</button></div>
-        <div class="item startup6"><button>Startup 6</button></div>
-        <div class="item startup7"><button>Startup 7</button></div>
-        <div class="item startup8"><button>Startup 8</button></div>
-        <div class="item startup9"><button>Startup 9</button></div>
+        <div class="item balie">Informatiebalie</div>
+        <div class="item bar">Restaurant/Bar</div>
+        <div class="item toiletten">Toiletten</div>
+        <div class="item ingang">Ingang</div>
+        <div class="item hal">Hall</div>
+        <div class="item trap">Trap</div>
+
+
+
+
+        <div class="item startup1"><button onclick="location.href='@Url.Action("Bedrijf1", "Bedrijf")'">Startup 1</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf2", "Bedrijf")'">Startup 2</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf3", "Bedrijf")'">Startup 3</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf4", "Bedrijf")'">Startup 4</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf5", "Bedrijf")'">Startup 5</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf6", "Bedrijf")'">Startup 6</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf7", "Bedrijf")'">Startup 7</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf1", "Bedrijf")'">Startup 8</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf1", "Bedrijf")'">Startup 9</button></div>
+
+ 
         
-
-
-
-
-
     </div>
 
 
-    @ViewBag.DetailId
 
 
 </body>

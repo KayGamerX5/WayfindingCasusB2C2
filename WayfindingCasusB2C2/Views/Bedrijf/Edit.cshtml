@@ -1,0 +1,59 @@
+﻿@model WayfindingCasusB2C2.Models.BedrijfDetail
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>BedrijfDetail</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BedrijfDetailsId" />
+            <div class="form-group">
+                <label asp-for="BedrijfNaam" class="control-label"></label>
+                <input asp-for="BedrijfNaam" class="form-control" />
+                <span asp-validation-for="BedrijfNaam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BedrijfEigenaar" class="control-label"></label>
+                <input asp-for="BedrijfEigenaar" class="form-control" />
+                <span asp-validation-for="BedrijfEigenaar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BedrijfMedewerkers" class="control-label"></label>
+                <input asp-for="BedrijfMedewerkers" class="form-control" />
+                <span asp-validation-for="BedrijfMedewerkers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BedrijfDoelen" class="control-label"></label>
+                <input asp-for="BedrijfDoelen" class="form-control" />
+                <span asp-validation-for="BedrijfDoelen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BedrijfOpgerichtJaar" class="control-label"></label>
+                <input asp-for="BedrijfOpgerichtJaar" class="form-control" />
+                <span asp-validation-for="BedrijfOpgerichtJaar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BedrijfBeschrijving" class="control-label"></label>
+                <input asp-for="BedrijfBeschrijving" class="form-control" />
+                <span asp-validation-for="BedrijfBeschrijving" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
