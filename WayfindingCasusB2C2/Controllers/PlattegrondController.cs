@@ -309,15 +309,8 @@ namespace WayfindingCasusB2C2.Controllers
             return View();
         }
 
-        public IActionResult Plattegrond2()
-        {
-            return View();
-        }
-
-        public IActionResult Plattegrond3()
-        {
-            return View();
-        }
+        
+        
 
     }
 }
