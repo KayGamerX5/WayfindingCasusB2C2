@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Storage;
 using WayfindingCasusB2C2.Data;
 using WayfindingCasusB2C2.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace WayfindingCasusB2C2.Controllers
 {
@@ -16,10 +17,7 @@ namespace WayfindingCasusB2C2.Controllers
             this.context = context;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+      
         
         public IActionResult Bedrijf1()
         {
@@ -77,37 +75,30 @@ namespace WayfindingCasusB2C2.Controllers
 
         }
 
-        //public IActionResult Edit(int? edit)
-        //{
-        //    if (edit == null || edit == 0)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var data = context.BedrijfDetails.FirstOrDefault(x => x.BedrijfDetailsId == edit);
+       public IActionResult Edit(int id)
+        {
+            var detail = context.BedrijfDetails.Where(y => y.BedrijfDetailsId == id).FirstOrDefault();
+      
+            return View(detail);
+        }
 
-        //    if (data == null)
-        //    {
-        //        return NotFound();
-        //    }
+        [HttpPost]
+        public IActionResult Edit(BedrijfDetail details, string returnUrl)
 
-        //    return View(data);
-        //}
+        {
+         
+           
+                var detail = context.BedrijfDetails.Where(y => y.BedrijfDetailsId == details.BedrijfDetailsId).FirstOrDefault();
+                context.Remove(detail);
+                context.Add(details);
+                context.SaveChanges();
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-
-        //public IActionResult Edit(BedrijfDetail data)
-        //{
-        //    if(ModelState.IsValid)
-        //    {
-        //        context.BedrijfDetails.Update(data);
-        //        context.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View();
-        //}
-
-
+             
+            
+             
+                return RedirectToAction("Plattegrond2", "Plattegrond");
+        }
+            
 
     }
 

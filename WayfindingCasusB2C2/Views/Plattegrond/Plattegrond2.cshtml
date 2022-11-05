@@ -10,18 +10,58 @@
     .grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto auto auto;
+        grid-template-rows: auto auto auto ;
+        gap: 10px;
+        background-color: #606060;
+      
+    }
+
+    .contents{
+        padding: 10px;
+        gap: 50px;
+    }
+
+    .balie{
+        padding: 5px;
+    }
+
+    
+    .entrane{
+        padding: 5px;
+    }
+
+    
+    .stairway{
+        padding: 5px;
+    }
+
+    
+    .restaurant{
+        padding: 5px;
+    }
+
+
+    .toilet {
+        padding: 5px;
+    }
+
+    grid-information {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
         grid-template-rows: auto auto auto;
-        gap: 0px;
+        gap: 10px;
         background-color: #606060;
     }
 
     .item {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 70px;
+    padding: 50px;
     font-size: 10px;
     text-align: center;
     }
+
+    
     
     .balie {
         grid-area: 1 / 1 / 2 / 2
@@ -43,32 +83,13 @@
     }
 
     .hal {
-        grid-area: 2 / 2 / 2 / 6
+        grid-area: 2 / 2 / 2 / 7
     }
 
     .trap {
-        grid-area: 2 / 6 / 2 / 7
+        grid-area: 1 / 7 / 4 / 8
     }
 
-    .startup1 {
-
-    }
-
-    .startup2 {
-
-    }
-
-    .startup3 {
-
-    }
-
-    .startup4 {
-
-    }
-
-    .startup5 {
-
-    }
 
     .startup6 {
         grid-area: 3 / 2 / 4 / 3
@@ -81,8 +102,15 @@
     }
 
     .startup8 {
-        grid-area: 3 / 4 / 4 / 5
+        grid-area: 3 / 4 / 4 / 5;
     }
+
+    
+   .contents{
+       padding: 5px;
+       margin-top: 20px;
+
+   }
 
     .startup9 {
         grid-area: 3 / 5 / 4 / 6
@@ -93,31 +121,40 @@
 </style>
 <body>
     <div class="grid-container">
-        <div class="item balie">Informatiebalie</div>
-        <div class="item bar">Restaurant/Bar</div>
-        <div class="item toiletten">Toiletten</div>
-        <div class="item ingang">Ingang</div>
+        <div class="item balie" ><i class="fa-solid fa-circle-info fa-2xl"></i></div>
+        <div class="item bar"><i class="fa-solid fa-utensils fa-2xl"></i></div>
+        <div class="item toiletten"><i class="fa-solid fa-restroom fa-2xl"></i></div>
+        <div class="item ingang"><i class="fa-solid fa-door-open fa-2xl"></i></div>
         <div class="item hal">Hall</div>
-        <div class="item trap">Trap</div>
+        <div class="item trap"><i class="fa-solid fa-stairs fa-2xl"></i></div>
 
 
 
 
-        <div class="item startup1"><button onclick="location.href='@Url.Action("Bedrijf1", "Bedrijf")'">Startup 1</button></div>
-        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf2", "Bedrijf")'">Startup 2</button></div>
-        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf3", "Bedrijf")'">Startup 3</button></div>
-        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf4", "Bedrijf")'">Startup 4</button></div>
-        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf5", "Bedrijf")'">Startup 5</button></div>
-        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf6", "Bedrijf")'">Startup 6</button></div>
-        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf7", "Bedrijf")'">Startup 7</button></div>
-        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf1", "Bedrijf")'">Startup 8</button></div>
-        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf1", "Bedrijf")'">Startup 9</button></div>
+        <div class="item startup1"><button onclick="location.href='@Url.Action("Bedrijf1", "Bedrijf")'">APG</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf2", "Bedrijf")'">Accenture</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf3", "Bedrijf")'">Block Materials</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf4", "Bedrijf")'">CBS</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf5", "Bedrijf")'">Conclusion Zuyd</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf6", "Bedrijf")'">De Volksbank</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf7", "Bedrijf")'">Etil</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf1", "Bedrijf")'">APG</button></div>
+        <div class="item startup2"><button onclick="location.href='@Url.Action("Bedrijf1", "Bedrijf")'">APG</button></div>
 
+       
  
         
     </div>
 
+   
+    
+    <div class="contents">
+        <div class="infodesk"><i class="fa-solid fa-circle-info fa-xl"></i> = Balie</div>
+        <div class="restaurant"><i class="fa-solid fa-utensils fa-xl"></i>  = Restaurant</div>
+        <div class="toilet"><i class="fa-solid fa-restroom fa-xl"></i>  = Toiletten</div>
+        <div class="entrance"><i class="fa-solid fa-door-open fa-xl"></i>  = Ingang</div>
+        <div class="stairway"><i class="fa-solid fa-stairs fa-xl"></i>  = Trappenhuis</div>
 
-
+    </div>
 
 </body>
