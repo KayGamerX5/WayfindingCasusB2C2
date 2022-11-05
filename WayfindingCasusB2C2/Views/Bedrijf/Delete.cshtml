@@ -1,11 +1,15 @@
 ﻿@model WayfindingCasusB2C2.Models.BedrijfDetail
 
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
+<h1>Delete</h1>
 
-
-
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Bedrijf Details</h4>
+    <h4>BedrijfDetail</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -45,9 +49,10 @@
             @Html.DisplayFor(model => model.BedrijfBeschrijving)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Delete" asp-route-id="@Model?.BedrijfDetailsId">Delete</a>
-    <a asp-action="Edit" asp-route-id="@Model?.BedrijfDetailsId">Edit</a> |
-    <a asp-action="Plattegrond2" asp-controller="Plattegrond">Terug naar plattegrond</a>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BedrijfDetailsId"/>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Plattegrond2" asp-controller="Plattegrond">Terug naar plattegrond</a>
+    </form>
 </div>

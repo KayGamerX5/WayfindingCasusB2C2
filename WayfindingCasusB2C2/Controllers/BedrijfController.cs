@@ -7,23 +7,23 @@ using Microsoft.AspNetCore.Http;
 
 namespace WayfindingCasusB2C2.Controllers
 {
-   
+
     public class BedrijfController : Controller
     {
-      
+
         private AppDbContext context { get; }
         public BedrijfController(AppDbContext context)
         {
             this.context = context;
         }
 
-      
-        
+
+
         public IActionResult Bedrijf1()
         {
-                var detail = context.BedrijfDetails.FirstOrDefault(x => x.BedrijfDetailsId == 1);
-                return View(detail);
-            
+            var detail = context.BedrijfDetails.FirstOrDefault(x => x.BedrijfDetailsId == 1);
+            return View(detail);
+
         }
 
         public IActionResult Bedrijf2()
@@ -75,10 +75,10 @@ namespace WayfindingCasusB2C2.Controllers
 
         }
 
-       public IActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             var detail = context.BedrijfDetails.Where(y => y.BedrijfDetailsId == id).FirstOrDefault();
-      
+
             return View(detail);
         }
 
@@ -86,21 +86,56 @@ namespace WayfindingCasusB2C2.Controllers
         public IActionResult Edit(BedrijfDetail details, string returnUrl)
 
         {
-         
-           
-                var detail = context.BedrijfDetails.Where(y => y.BedrijfDetailsId == details.BedrijfDetailsId).FirstOrDefault();
-                context.Remove(detail);
-                context.Add(details);
-                context.SaveChanges();
 
-             
-            
-             
-                return RedirectToAction("Plattegrond2", "Plattegrond");
+
+            var detail = context.BedrijfDetails.Where(y => y.BedrijfDetailsId == details.BedrijfDetailsId).FirstOrDefault();
+            context.Remove(detail);
+            context.Add(details);
+            context.SaveChanges();
+
+
+
+
+            return RedirectToAction("Plattegrond2", "Plattegrond");
         }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+
+
+            }
+            var detail = context.BedrijfDetails.FirstOrDefault(y => y.BedrijfDetailsId == id);
+
+            if (detail == null)
+            {
+                return NotFound();
+            }
+            return View(detail);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePOST(int? id)
+        {
+            var detail = context.BedrijfDetails.Find(id);
+
+            if (detail == null)
+            {
+                return NotFound();
+            }
+
+            context.BedrijfDetails.Remove(detail);
+            context.SaveChanges();
+            return RedirectToAction("Plattegrond2");
+        }
+    }
+
             
 
-    }
+    
 
 
 }
