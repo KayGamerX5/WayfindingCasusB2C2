@@ -1,91 +1,161 @@
-﻿@{
-    ViewData["Title"] = "Plattegrond";
-}
-
-<style>
+﻿<style>
     .grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto auto auto;
-        gap: 10px;
-        background-color: #2196F3;
-        padding: 10px;
+        grid-template-rows: auto auto auto;
+        gap: 0px;
+        background-color: #606060;
     }
 
-        .grid-container > div {
-            background-color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            padding: 20px 0;
-            font-size: 30px;
-        }
-
-     
-
-    .item1 {
-    grid-area: 1 / 1 / 3 / 3 }
-
-    .item2 {
-        grid-area: 1 / 3 / 3 / 3
+    .item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 70px;
+        font-size: 10px;
+        text-align: center;
     }
 
-    .item3 {
-        grid-area: 1 / 4 / 3 / 4
+    .balie {
+        grid-area: 1 / 1 / 2 / 2
     }
 
-    .item4 {
-        grid-area: 1 / 5 / 3 / 5
+    .bar {
+        grid-area: 3 / 1 / 4 / 2
     }
 
-    .item10{
-        grid-area: 4 / 3 / 6 / 3
+    .toiletten {
+        grid-area: 3 / 6 / 4 / 7
     }
 
-    .item11 {
-        grid-area: 4 / 4 / 6 / 4
+    .ingang {
+        grid-area: 2 / 1 / 2 / 2
     }
 
-    .item12 {
-        grid-area: 4 / 5 / 6 / 5
+    .hal {
+        grid-area: 2 / 2 / 2 / 6
     }
 
-    
-
-
-
- 
- 
-
-    .item9 {
-        grid-area: 4 / 1 / 6 / 3
+    .trap {
+        grid-area: 2 / 6 / 2 / 7
     }
 
-    .item7 {
-        grid-column: 1 / 6;
-        grid-row: 3 / 3;
+    .startup1 {
     }
 
+    .startup2 {
+    }
+
+    .startup3 {
+    }
+
+    .startup4 {
+    }
+
+    .startup5 {
+    }
+
+    .startup6 {
+        grid-area: 3 / 2 / 4 / 3
+    }
+
+    .startup7 {
+        grid-area: 3 / 3 / 4 / 4
+    }
+
+    .startup8 {
+        grid-area: 3 / 4 / 4 / 5
+    }
+
+    .startup9 {
+        grid-area: 3 / 5 / 4 / 6
+    }
 
 </style>
-
-<div class="grid-container">
-    <div class="item1">
-        <h1>
-            Ruimte 1
-        </h1>
+<body>
+    <div class="grid-container">
+        <div class="item balie"><button type="button" onclick="balieFunctie();document.getElementById('RouteBeschrijving').style.display='block'">Informatiebalie</button></div>
+        <div class="item bar"><button onclick="barFunctie();document.getElementById('RouteBeschrijving').style.display='block'">Restaurant/Bar</button></div>
+        <div class="item toiletten"><button onclick="toilettenFunctie();document.getElementById('RouteBeschrijving').style.display='block'">Toiletten</button></div>
+        <div class="item ingang"><button>Ingang</button></div>
+        <div class="item hal"><button>Hal</button></div>
+        <div class="item trap"><button onclick="trapFunctie();document.getElementById('RouteBeschrijving').style.display='block'">Trap</button></div>
+        <div class="item startup1"><button onclick="apgFunctie();document.getElementById('RouteBeschrijving').style.display='block'">APG</button></div>
+        <div class="item startup2"><button onclick="accentureFunctie();document.getElementById('RouteBeschrijving').style.display='block'">Accenture</button></div>
+        <div class="item startup3"><button onclick="blockmaterialsFunctie();document.getElementById('RouteBeschrijving').style.display='block'">Block Materials</button></div>
+        <div class="item startup4"><button onclick="cbsFunctie();document.getElementById('RouteBeschrijving').style.display='block'">CBS</button></div>
+        <div class="item startup5"><button onclick="conclusionFunctie();document.getElementById('RouteBeschrijving').style.display='block'">Conclusion</button></div>
+        <div class="item startup6"><button onclick="devolksbankFunctie();document.getElementById('RouteBeschrijving').style.display='block'">De Volksbank</button></div>
+        <div class="item startup7"><button onclick="etilFunctie();document.getElementById('RouteBeschrijving').style.display='block'">Etil</button></div>
+        <div class="item startup8"><button onclick="politielimburgFunctie();document.getElementById('RouteBeschrijving').style.display='block'">Politie Limburg</button></div>
+        <div class="item startup9"><button onclick="gemeenteheerlenFunctie();document.getElementById('RouteBeschrijving').style.display='block'">Gemeente Heerlen</button></div>
     </div>
-    <div class="item2">2</div>
-    <div class="item3">3</div>
-    <div class="item4">4</div>
-    <div class="item5">5</div>
-    <div class="item6">6</div>
-    <div class="item7">7</div>
-    <div class="item8">8</div>
-    <div class="item9">9</div>
-    <div class="item10">10</div>
-    <div class="item11">11</div>
-    <div class="item12">12</div>
-    <div class="item13">13</div>
-    <div class="item14">14</div>
-  
-   
 
-</div>
+    <script>
+        function balieFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "Vanaf de ingang meteen naar links lopen."
+        }
+
+        function barFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "Vanaf de ingang meteen naar rechts lopen."
+        }
+
+        function toilettenFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "Vanaf de ingang rechtdoor blijven lopen. De toiletten bevinden zich rechts van de trap."
+        }
+
+        function trapFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "Vanaf de ingang rechtdoor blijven lopen."
+        }
+
+        function apgFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "APG bevindt zich in de tweede ruimte links vanaf de ingang."
+        }
+
+        function accentureFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "Accenture bevindt zich in de derde ruimte links vanaf de ingang."
+        }
+
+        function blockmaterialsFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "Block Materials bevindt zich in de vierde ruimte links vanaf de ingang."
+        }
+
+        function cbsFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "CBS bevindt zich in de vierde ruimte links vanaf de ingang."
+        }
+
+        function conclusionFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "Conclusion bevindt zich in de vijfde ruimte links vanaf de ingang."
+        }
+
+        function devolksbankFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "De Volksbank bevindt zich in de tweede ruimte rechts vanaf de ingang."
+        }
+
+        function etilFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "Etil bevindt zich in de derde ruimte rechts vanaf de ingang."
+        }
+
+        function politielimburgFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "Politie Limburg bevindt zich in de vierde ruimte rechts vanaf de ingang."
+        }
+
+        function gemeenteheerlenFunctie() {
+            document.getElementById("RouteBeschrijving").innerHTML = "Gemeente Heerlen bevindt zich in de vijfde ruimte rechts vanaf de ingang."
+        }
+
+    </script>
+
+    <div style="text-align:center;margin-top:20px;">
+
+        <h2>Klik op de bestemming waar u naar toe wilt.</h2>
+
+        <p id="RouteBeschrijving" style="display:none"></p>
+
+
+    </div>
+
+
+
+
+
+</body>
